@@ -17,7 +17,6 @@ import {localstorage} from "./localstorage";
 import * as message_store from "./message_store";
 import * as modals from "./modals";
 import * as overlays from "./overlays";
-import {page_params} from "./page_params";
 import * as people from "./people";
 import * as popovers from "./popovers";
 import * as sidebar_ui from "./sidebar_ui";
@@ -316,7 +315,7 @@ function format_topic(stream_id, topic, topic_unread_count, latest_msg_id) {
         // The following two fields (development & all_visibility_policies)
         // are not specific to this context, but this is the easiest way
         // we've figured out for passing the data to the template rendering.
-        development: page_params.development_environment,
+        development: true,
         all_visibility_policies: user_topics.all_visibility_policies,
         visibility_policy: user_topics.get_topic_visibility_policy(stream_id, topic),
         topic_muted: Boolean(user_topics.is_topic_muted(stream_id, topic)),
